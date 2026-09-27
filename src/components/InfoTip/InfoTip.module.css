@@ -1,0 +1,67 @@
+.wrap {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.trigger {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.trigger:hover,
+.trigger[aria-expanded="true"] {
+  color: var(--gold-300);
+  border-color: rgba(242, 207, 111, 0.5);
+}
+
+.bubble {
+  position: absolute;
+  top: calc(100% + 8px);
+  z-index: 50;
+  width: max-content;
+  max-width: min(260px, 78vw);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: #2b3050;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-card);
+  color: var(--text-1);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: left;
+  letter-spacing: normal;
+  text-transform: none;
+  animation: pop 0.18s var(--ease-out);
+}
+
+.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.start {
+  left: -8px;
+}
+
+.end {
+  right: -8px;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    margin-top: -4px;
+  }
+}

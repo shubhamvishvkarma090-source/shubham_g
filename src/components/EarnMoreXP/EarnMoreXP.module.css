@@ -1,0 +1,308 @@
+.section {
+  composes: card from '../../styles/shared.module.css';
+}
+
+.waysBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, rgba(242, 207, 111, 0.1), rgba(242, 207, 111, 0.02));
+  border: 1px solid rgba(242, 207, 111, 0.2);
+}
+
+.waysText {
+  display: grid;
+}
+
+.waysText strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--gold-300);
+}
+
+.waysText span {
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+.ways {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.way {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: rgba(22, 24, 39, 0.6);
+  color: var(--text-1);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.way:hover {
+  border-color: rgba(242, 207, 111, 0.5);
+  color: var(--gold-300);
+}
+
+/* Recommendation */
+.recommend {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(127, 167, 255, 0.07);
+  border: 1px solid rgba(127, 167, 255, 0.22);
+}
+
+.recommendIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: rgba(127, 167, 255, 0.15);
+  color: var(--blue);
+}
+
+.recommendLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.recommendHeadline {
+  margin-top: 2px;
+  font-weight: 600;
+}
+
+.recommendDetail {
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: var(--text-2);
+}
+
+.notice {
+  min-height: 12px;
+  margin: 10px 0;
+}
+
+.noticeOk,
+.noticeErr {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.noticeOk {
+  color: var(--green);
+}
+
+.noticeErr {
+  color: #ffb4b4;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Card */
+.earnCard {
+  --tone: var(--gold-500);
+  --tone-bg: rgba(242, 207, 111, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-1);
+  transition: transform 0.25s var(--ease-out), border-color 0.25s, box-shadow 0.25s;
+}
+
+.earnCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--tone);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.purple {
+  --tone: var(--purple);
+  --tone-bg: rgba(139, 123, 216, 0.16);
+}
+
+.green {
+  --tone: var(--green);
+  --tone-bg: rgba(79, 191, 139, 0.14);
+}
+
+.blue {
+  --tone: var(--blue);
+  --tone-bg: rgba(127, 167, 255, 0.14);
+}
+
+.orange {
+  --tone: #f0a060;
+  --tone-bg: rgba(240, 160, 96, 0.14);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--tone-bg);
+  color: var(--tone);
+}
+
+.xpPill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(242, 207, 111, 0.12);
+  color: var(--gold-300);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.soonPill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px dashed var(--border-strong);
+  color: var(--text-2);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cardDesc {
+  font-size: 0.84rem;
+  color: var(--text-2);
+}
+
+.cardMeta {
+  font-size: 0.74rem;
+  color: var(--text-3);
+}
+
+.cardAction {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.cardBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-1);
+  font-weight: 600;
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.cardBtn:disabled {
+  color: var(--text-3);
+  cursor: not-allowed;
+}
+
+.cardBtnPrimary {
+  border-color: rgba(242, 207, 111, 0.45);
+  color: var(--gold-300);
+}
+
+.earnCard:hover .cardBtnPrimary:not(:disabled),
+.cardBtnPrimary:focus-visible {
+  background: var(--gold-gradient);
+  border-color: transparent;
+  color: #1b1405;
+}
+
+.soon {
+  background: rgba(29, 32, 52, 0.55);
+}
+
+.soon .cardIcon,
+.soon .cardTitle {
+  opacity: 0.7;
+}
+
+.soon:hover {
+  transform: none;
+  border-color: var(--border-subtle);
+  box-shadow: none;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cardBtnSub {
+  font-weight: 500;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}

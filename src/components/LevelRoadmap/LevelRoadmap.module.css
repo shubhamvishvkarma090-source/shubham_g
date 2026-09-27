@@ -1,0 +1,197 @@
+.section {
+  composes: card from '../../styles/shared.module.css';
+  padding: 20px 0 8px;
+}
+
+.section > :first-child {
+  padding: 0 20px;
+}
+
+.skeletonRow {
+  display: flex;
+  gap: 14px;
+  padding: 8px 20px 16px;
+  overflow: hidden;
+}
+
+.section > [role='alert'] {
+  margin: 0 20px 12px;
+}
+
+.scroller {
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(242, 207, 111, 0.3) transparent;
+  padding: 8px 20px 16px;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: max-content;
+}
+
+/* Connector line behind the hexes */
+.track::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 78px;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.14) 0 8px, transparent 8px 14px);
+}
+
+.node {
+  position: relative;
+  scroll-snap-align: center;
+}
+
+.nodeBtn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 132px;
+  min-height: 196px;
+  padding: 12px 10px 14px;
+  border-radius: 18px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-1);
+  color: var(--text-1);
+  cursor: pointer;
+  transition: transform 0.25s var(--ease-out), border-color 0.25s, box-shadow 0.25s;
+}
+
+.nodeBtn:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+}
+
+.hex {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.reward {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--text-2);
+}
+
+.hover {
+  position: absolute;
+  inset: auto 10px 8px;
+  padding: 4px 0;
+  border-radius: 8px;
+  background: rgba(22, 24, 39, 0.92);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold-300);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.nodeBtn:hover .hover,
+.nodeBtn:focus-visible .hover {
+  opacity: 1;
+  transform: none;
+}
+
+/* States */
+.completed .status {
+  background: rgba(79, 191, 139, 0.14);
+  color: var(--green);
+}
+
+.completed .reward {
+  color: var(--green);
+}
+
+.current .nodeBtn {
+  width: 148px;
+  border-color: rgba(242, 207, 111, 0.55);
+  background: linear-gradient(180deg, rgba(242, 207, 111, 0.14) 0%, var(--surface-1) 70%);
+  box-shadow: var(--shadow-gold);
+}
+
+.current .status {
+  background: var(--gold-gradient);
+  color: #1b1405;
+}
+
+.current .reward {
+  color: var(--gold-100);
+}
+
+.next .nodeBtn {
+  border-color: rgba(127, 167, 255, 0.45);
+  border-style: dashed;
+}
+
+.next .status {
+  background: rgba(127, 167, 255, 0.14);
+  color: var(--blue);
+}
+
+.next .reward {
+  color: var(--gold-300);
+  font-weight: 600;
+}
+
+.locked .nodeBtn {
+  background: rgba(29, 32, 52, 0.6);
+}
+
+.locked .hex,
+.locked .name {
+  opacity: 0.65;
+}
+
+.locked .status {
+  background: rgba(91, 96, 120, 0.25);
+  color: var(--text-3);
+}
+
+@media (min-width: 1280px) {
+  .scroller {
+    padding-inline: 24px;
+  }
+
+  .nodeBtn {
+    width: 140px;
+  }
+
+  .current .nodeBtn {
+    width: 158px;
+  }
+}

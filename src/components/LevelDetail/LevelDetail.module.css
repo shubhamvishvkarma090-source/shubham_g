@@ -1,0 +1,93 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 32px 24px 24px;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.copy {
+  color: var(--text-2);
+  font-size: 0.9rem;
+}
+
+.xp {
+  color: var(--gold-300);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.reward {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(242, 207, 111, 0.07);
+  border: 1px solid rgba(242, 207, 111, 0.22);
+}
+
+.rewardLabel {
+  font-size: 0.8rem;
+  color: var(--text-2);
+}
+
+.rewardValue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--gold-100);
+}
+
+.perks {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.perks li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-1);
+}
+
+.perks svg {
+  color: var(--gold-300);
+}
+
+.done {
+  composes: primaryBtn from '../../styles/shared.module.css';
+  width: 100%;
+  margin-top: 8px;
+}

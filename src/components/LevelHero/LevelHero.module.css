@@ -1,0 +1,165 @@
+.card {
+  composes: goldCard from '../../styles/shared.module.css';
+  overflow: hidden;
+  height: 100%;
+  padding: 22px;
+}
+
+.glow {
+  position: absolute;
+  top: -120px;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 207, 111, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.skelText {
+  flex: 1;
+  display: grid;
+  gap: 10px;
+}
+
+.badgeWrap {
+  flex-shrink: 0;
+  filter: drop-shadow(0 8px 24px rgba(226, 171, 63, 0.35));
+}
+
+.badge {
+  display: block;
+  animation: float 5s ease-in-out infinite;
+}
+
+.info {
+  min-width: 0;
+}
+
+.eyebrow {
+  composes: eyebrow from '../../styles/shared.module.css';
+}
+
+.levelTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin-top: 4px;
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  font-weight: 800;
+}
+
+.levelName {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(242, 207, 111, 0.12);
+  border: 1px solid rgba(242, 207, 111, 0.3);
+  color: var(--gold-100);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.xp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--gold-100);
+}
+
+.xpUnit {
+  font-size: 0.85rem;
+  color: var(--text-2);
+}
+
+.path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.step {
+  display: grid;
+  gap: 2px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+.stepCurrent {
+  border-color: rgba(242, 207, 111, 0.35);
+  background: rgba(242, 207, 111, 0.06);
+}
+
+.stepNext {
+  border-color: rgba(127, 167, 255, 0.35);
+  background: rgba(127, 167, 255, 0.06);
+}
+
+.stepLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.stepValue {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.stepValue small {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.stepArrow {
+  color: var(--text-3);
+}
+
+.cta {
+  composes: ghostBtn from '../../styles/shared.module.css';
+  margin-left: auto;
+  color: var(--gold-300);
+}
+
+@media (max-width: 575.98px) {
+  .cta {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 359.98px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-4px);
+  }
+}

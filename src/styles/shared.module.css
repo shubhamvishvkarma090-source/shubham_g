@@ -1,0 +1,101 @@
+/* Shared building blocks, consumed via `composes:` from component modules. */
+
+.card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(43, 48, 80, 0.55) 0%, rgba(29, 32, 52, 0.9) 100%);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+}
+
+.goldCard {
+  composes: card;
+  border-color: rgba(242, 207, 111, 0.22);
+  box-shadow: var(--shadow-gold);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+}
+
+.goldText {
+  background: var(--gold-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--gold-gradient);
+  color: #1b1405;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(226, 171, 63, 0.25);
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s;
+}
+
+.primaryBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(226, 171, 63, 0.35);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.ghostBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-1);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.ghostBtn:hover:not(:disabled) {
+  border-color: rgba(242, 207, 111, 0.5);
+  background: rgba(242, 207, 111, 0.06);
+}
+
+.demoBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px dashed rgba(127, 167, 255, 0.5);
+  color: var(--blue);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

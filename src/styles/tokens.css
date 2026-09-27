@@ -1,0 +1,50 @@
+:root {
+  /* Surfaces — built to sit on the mandated #161827 body */
+  --bg-body: #161827;
+  --surface-1: #1d2034;
+  --surface-2: #232741;
+  --surface-3: #2b3050;
+  --surface-glass: rgba(35, 39, 65, 0.72);
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  /* Brand */
+  --gold-100: #fbe7b0;
+  --gold-300: #f2cf6f;
+  --gold-500: #e2ab3f;
+  --gold-700: #b9832a;
+  --gold-gradient: linear-gradient(135deg, #f6d77a 0%, #e2ab3f 48%, #b9832a 100%);
+  --gold-text: linear-gradient(180deg, #fff3cf 0%, #f2cf6f 45%, #d49a36 100%);
+  --silver: #c9ced8;
+
+  /* Semantic */
+  --text-1: #f5f6fa;
+  --text-2: #b5b9cc;
+  --text-3: #8187a2;
+  --blue: #7fa7ff;
+  --purple: #8b7bd8;
+  --purple-deep: #5c4bb3;
+  --green: #4fbf8b;
+  --red: #e57373;
+  --locked: #5b6078;
+
+  /* State colours */
+  --state-completed: var(--green);
+  --state-current: var(--gold-500);
+  --state-next: var(--blue);
+  --state-locked: var(--locked);
+
+  /* Shape & depth */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-card: 0 10px 30px rgba(5, 6, 15, 0.45);
+  --shadow-gold: 0 0 0 1px rgba(242, 207, 111, 0.25), 0 12px 32px rgba(226, 171, 63, 0.18);
+
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --nav-height: 68px;
+}

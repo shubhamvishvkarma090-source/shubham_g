@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.titles {
+  min-width: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: rgba(242, 207, 111, 0.12);
+  color: var(--gold-300);
+}
+
+.subtitle {
+  margin-top: 4px;
+  color: var(--text-2);
+  font-size: 0.875rem;
+}
+
+.action {
+  flex-shrink: 0;
+}
+
+@media (min-width: 1280px) {
+  .title {
+    font-size: 1.3rem;
+  }
+}

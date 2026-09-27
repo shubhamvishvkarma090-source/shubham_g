@@ -1,0 +1,122 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(60% 40% at 85% -5%, rgba(139, 123, 216, 0.12) 0%, transparent 70%),
+    radial-gradient(50% 35% at 0% 10%, rgba(242, 207, 111, 0.07) 0%, transparent 70%),
+    var(--bg-body);
+  padding-bottom: calc(var(--nav-height) + 24px + env(safe-area-inset-bottom));
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Mobile (320px+) — mockup order */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'hero'
+    'reward'
+    'boost'
+    'roadmap'
+    'play'
+    'earn'
+    'activity';
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.hero { grid-area: hero; }
+.reward { grid-area: reward; }
+.boost { grid-area: boost; }
+.roadmap { grid-area: roadmap; }
+.play { grid-area: play; }
+.earn { grid-area: earn; }
+.activity { grid-area: activity; }
+
+.grid > * {
+  min-width: 0;
+  scroll-margin-top: 16px;
+}
+
+.footer {
+  margin-top: 32px;
+  padding: 20px 0 8px;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+
+.disclaimer {
+  margin-top: 6px;
+  font-size: 0.72rem;
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    grid-template-areas:
+      'hero reward'
+      'boost reward'
+      'roadmap roadmap'
+      'play play'
+      'earn earn'
+      'activity activity';
+    gap: 20px;
+  }
+}
+
+/* Laptop (1280px+) — PDF reference composition, refined */
+@media (min-width: 1280px) {
+  .page {
+    padding-bottom: 32px;
+  }
+
+  .container {
+    padding: 0 32px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    grid-template-areas:
+      'hero reward'
+      'boost reward'
+      'roadmap roadmap'
+      'play activity'
+      'earn earn';
+    gap: 24px;
+    margin-top: 0;
+  }
+
+  .grid > * {
+    scroll-margin-top: 84px;
+  }
+}
+
+/* Desktop (1440px+) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Large screens (1920px+) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1480px;
+  }
+
+  .grid {
+    gap: 28px;
+  }
+}

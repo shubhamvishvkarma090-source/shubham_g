@@ -1,0 +1,40 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 28px 16px;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-strong);
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.message {
+  color: var(--text-2);
+  font-size: 0.875rem;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--gold-gradient);
+  color: #1b1405;
+  font-weight: 700;
+  cursor: pointer;
+}
